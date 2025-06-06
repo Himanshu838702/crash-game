@@ -1,0 +1,57 @@
+<!-- crash.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aviator Crash Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="main-container">
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <div class="logo">Aviator</div>
+      <div class="wallet-bar">
+        Wallet: <span id="wallet">1000</span> coins
+      </div>
+    </header><!-- Login Section -->
+<div id="loginSection" class="login-section">
+  <input type="text" id="username" placeholder="Enter your name" />
+  <button onclick="login()">Login</button>
+</div>
+
+<!-- Game Section -->
+<div id="gameSection" class="game-section" style="display:none;">
+  <p>Welcome, <span id="displayName"></span>!</p>
+
+  <!-- Multiplier Area -->
+  <div class="multiplier-display">
+    <h2><span id="multiplier">1.00x</span></h2>
+  </div>
+
+  <!-- Bet Controls -->
+  <div class="bet-controls">
+    <div class="bet-amount">
+      <button onclick="adjustBet(-10)">-</button>
+      <input type="number" id="bet" value="10" min="1" step="1" />
+      <button onclick="adjustBet(10)">+</button>
+    </div>
+    <div class="quick-bet">
+      <button onclick="setQuickBet(100)">100</button>
+      <button onclick="setQuickBet(200)">200</button>
+      <button onclick="setQuickBet(500)">500</button>
+      <button onclick="setQuickBet(1000)">1000</button>
+    </div>
+    <div class="action-buttons">
+      <button id="startBtn">Bet</button>
+      <button id="cashoutBtn" disabled>Cash Out</button>
+    </div>
+  </div>
+
+  <!-- Result Text -->
+  <p id="result"></p>
+</div>
+
+  </div>  <script src="game.js"></script></body>
+</html>
